@@ -35,7 +35,14 @@ list all files and directories in the current directory and all subdirectories. 
 3)
 do a pip list or pip freeze and call out versions of the pytest and pylint packages in your requirements.txt. Include them in your requirements.txt, and for the extra credit, just add a note reminding me you included them.
 
-4) In the sample code from the book, why does the line if __name__=="__main__": allow the script to run if called directly, but not otherwise? What's going on there?
+Note : I have updated the Requirements.txt to reflect the versions of packaages from pip freeze. 
+
+4) In the sample code from the book, why does the line if __name__=="__main__": allow the script to run if called directly, but not otherwise? What's going on there?a
+
+special variable __name__ contains the name of the module that is currently being executed. When a script is called directly, its __name__ is set to "__main__". When a module is imported, its __name__ is set to the name of the module.
 
 
 5) If you add two print statements, (or any statements for that matter), one above and one below the if __name__... line, what would happen when I do an import of the file? What happens when I call the file directly with python <filename>. Most importantly, why?.
+
+Contd from above question. for the import : The top print will work while the inner print statement will not work since the py file is being imported and does not belong to the file ebing executed. 
+For a DIrect call of the .py file : Both the print statements should ideally work. since the __main__ is part of the same .py file. 
