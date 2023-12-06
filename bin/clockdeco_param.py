@@ -14,7 +14,12 @@ def clock(fmt=DEFAULT_FMT):
             print(fmt.format(**locals()))  
             return _result  
         return clocked  
-    return decorate  
+    return decorate 
+
+
+@clock()
+def snooze5111(seconds):
+    return str(seconds)
 
 if __name__ == '__main__':
 
