@@ -21,7 +21,7 @@ class Perceptron:
 
         for _ in range(5000):
             for some_input, label in zip(dummied_inputs, labels):
-                label_delta = (label - self.predict(some_input))
+                label_delta = label - self.predict(some_input)
                 for index, val  in enumerate(some_input):
                     self._weights[index] += .1 * val * label_delta
     def predict(self, another_input):
@@ -31,4 +31,4 @@ class Perceptron:
         if len(another_input) == 0:
             return None
         another_input = another_input + [-1]
-        return int(0 < sum([x[0]*x[1] for x in zip(self._weights, another_input)]))
+        return int(0 < sum([x[0]*x[1] for x in zip(self._weights, another_input)])) #pylint: disable=R1728
